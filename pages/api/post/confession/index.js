@@ -31,7 +31,7 @@ export default async function handler(req, res) {
 
         if (!addConfession) {
             throw {
-                msg: "Database error",
+                msg: "Database error: InsertionError",
                 desc: "Failed to add confessio to database",
                 status: 422
             };
