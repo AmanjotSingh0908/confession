@@ -20,7 +20,7 @@
 }
 
 .heroContainer h1 {
-    text-decoration: var(--primary) dotted underline;
+    text-decoration: var(--primary) solid underline;
 }
 
 .heroContainer button {
@@ -51,3 +51,4 @@
 .female h4 {
     color: violet;
 }
+

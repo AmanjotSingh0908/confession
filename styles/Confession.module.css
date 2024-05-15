@@ -51,3 +51,9 @@
     background-color: var(--primary);
     color: var(--white);
 }
+
+@media (min-width: 0px) and (max-width: 769px){
+    .box {
+        width: 80%;
+    }
+}

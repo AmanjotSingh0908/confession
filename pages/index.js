@@ -44,7 +44,7 @@ export default function Home() {
             <main className={`${styles.main}`}>
                  <div className={styles.heroContainer}>
                  <h1>Confess it Out!</h1>
-                 <h3>You'll instantly feel a weight lifted off<br></br>your shoulders when your feelings<br></br>escapes your mouth.</h3>
+                 <h3>You'll instantly feel a weight lifted off<br></br>your shoulders when your feelings<br></br>escapes your mouth ;)</h3>
                  <button onClick={() => router.push("confession/add")}>Confess</button>
                  </div>
                  {/* IMage */}
