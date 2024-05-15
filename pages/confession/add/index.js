@@ -46,9 +46,9 @@ const AddConfession = () => {
     }, [userGender, userConfession]);
 
     const validateData = useCallback(() => {
-        console.log({ userConfession });
+        // console.log({ userConfession });
         if (!userConfession) return { isValid: false, msg: "Write something" };
-        if (userConfession.length < 6) return { isValid: false, msg: "Confession is too short!" };
+        if (userConfession.length < 6 || userConfession.length > 200) return { isValid: false, msg: "Either Confession is too short or you exceeded the word limit!" };
         return { isValid: true, msg: null };
     }, [userConfession]);
 
