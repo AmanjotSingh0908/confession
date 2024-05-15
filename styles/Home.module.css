@@ -4,7 +4,7 @@
     margin: 5px 20px;
 }
 
-.heroContainer{
+.heroContainer {
     font-size: larger;
     display: flex;
     flex-direction: column;
@@ -14,26 +14,27 @@
     text-align: center;
 }
 
-.heroContainer h3{
+.heroContainer h3 {
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.heroContainer h1{
+.heroContainer h1 {
     text-decoration: blue solid underline;
 }
 
-.heroContainer button{
+.heroContainer button {
     padding: 10px 25px;
     font-size: large;
     background-color: blue;
     color: aliceblue;
     border: none;
     border-radius: 6px;
+    transition: all 500ms ease;
 }
 
-.heroContainer button:hover{
-    scale: 1.1
+.heroContainer button:hover {
+    scale: 1.1;
 }
 
 .confession-box {
