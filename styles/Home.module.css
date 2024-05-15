@@ -20,7 +20,7 @@
 }
 
 .heroContainer h1 {
-    text-decoration: var(--primary) solid underline;
+    text-decoration: var(--primary) dotted underline;
 }
 
 .heroContainer button {
