@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 
         const { gender, confession } = req.body;
 
-        console.log({ gender, confession });
+        // console.log({ gender, confession });
 
         if (!gender || !confession) {
             throw {

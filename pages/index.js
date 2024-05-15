@@ -1,8 +1,29 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { BeatLoader } from "@/components/loader/loader";
+import { useRouter } from 'next/router'
+import { useEffect, useState } from "react";
+import Image from 'next/image'
 
 export default function Home() {
+    const router = useRouter();
+        const [confessions, setConfessions] = useState([]);
+
+    useEffect(() => {
+        const fetchConfessions = async () => {
+            try {
+                const response = await fetch("/api/get/confession/");
+                if(response.status != 200){
+                    throw Error("Failed at fetching confessions")
+                }
+                const data = await response.json();
+                setConfessions(data.Getconfessions);
+            } catch (error) {
+                console.log("Error fetching confession: ", error)
+            }
+        }
+        fetchConfessions();
+    }, [])
     return (
         <>
             <Head>
@@ -21,7 +42,23 @@ export default function Home() {
                 />
             </Head>
             <main className={`${styles.main}`}>
-                {/* List all confession */}
+                 <div className={styles.heroContainer}>
+                 <h1>Confess it Out!</h1>
+                 <h3>You'll instantly feel a weight lifted off<br></br>your shoulders when your feelings<br></br>escapes your mouth.</h3>
+                 <button onClick={() => router.push("confession/add")}>Confess</button>
+                 </div>
+                 {/* IMage */}
+                 {/* <Image src="/pexels-pengwhan-1767434.jpg" width={500} height={500}/> */}
+                 <div className={styles.confessionContainer}>
+                 <div>
+                            {confessions.map((confession, index) => (
+                                <div key={index} className={`${styles['confession-box']} ${confession.gender === 'male' ? styles.male : styles.female}`}>
+                                <h4>{confession.gender.charAt(0).toUpperCase() + confession.gender.slice(1)}:</h4>
+                                <p>{confession.confession}</p>
+                            </div>
+                            ))}
+                    </div>
+                 </div>
                 <BeatLoader />
             </main>
         </>
