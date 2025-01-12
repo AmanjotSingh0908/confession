@@ -48,6 +48,7 @@
 }
 
 .publishBtn {
+    right: 0;
     background-color: var(--primary);
     color: var(--white);
 }
